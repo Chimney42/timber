@@ -23,11 +23,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: check-env-params
-      uses: actions/checkout@master
-      env: # Or as an environment variable
-        GOOGLE_PROJECT_ID: ${{ env.secrets.GOOGLE_PROJECT_ID }}
-    - name: test-env
-      run: echo $GOOGLE_PROJECT_ID; echo ${{ secrets.GOOGLE_PROJECT_ID }}
+      run: echo ${{ env.secrets.GOOGLE_PROJECT_ID }}
+    - name: check-global-env-params
+      run: echo ${{ secrets.GOOGLE_PROJECT_ID }}
     - name: docker-build-and-push-to-gcr
       uses: raccoondev/push-docker-gcr@v1
       with:
