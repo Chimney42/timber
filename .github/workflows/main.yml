@@ -25,7 +25,7 @@ jobs:
     - name: check-env-params
       uses: actions/checkout@master
       env: # Or as an environment variable
-        GOOGLE_PROJECT_ID: ${{ gitops-training.secrets.GOOGLE_PROJECT_ID }}
+        GOOGLE_PROJECT_ID: ${{ env.secrets.GOOGLE_PROJECT_ID }}
     - name: test-env
       run: echo $GOOGLE_PROJECT_ID; echo ${{ $GOOGLE_PROJECT_ID }}
     - name: docker-build-and-push-to-gcr
