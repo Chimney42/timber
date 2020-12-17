@@ -23,6 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: check-env-params
+      uses: actions/checkout@master
       env: # Or as an environment variable
         GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
     - name: test-env
