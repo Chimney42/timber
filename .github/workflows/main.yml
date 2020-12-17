@@ -23,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: docker-build-and-push-to-gcr
-      uses: raccoondev/push-docker-gcr
+      uses: raccoondev/push-docker-gcr@v1
       with:
         gcr_host: eu.gcr.io
         image_name: timber-backend
