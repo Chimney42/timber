@@ -40,7 +40,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: Commit to Opsrepo
+      env:
+        GITHUB_USER: Chimney42
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
-        git clone git@github.com:ContainerSolutions/gitops-training-opsrepo.git
+        git clone https://$GITHUB_USER:$GITHUB_TOKEN@github.com/ContainerSolutions/gitops-training-opsrepo.git
         ls
 
