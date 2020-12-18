@@ -33,3 +33,14 @@ jobs:
       env:  
         GOOGLE_PROJECT_ID: container-solutions-workshops
         GCLOUD_SERVICE_KEY: ${{ secrets.GCLOUD_SERVICE_KEY }} 
+  deploy:
+    # The type of runner that the job will run on
+    runs-on: jnewland/git-and-stuff
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - name: Commit to Opsrepo
+      run: |
+        git clone git@github.com:ContainerSolutions/gitops-training-opsrepo.git
+        ls
+
