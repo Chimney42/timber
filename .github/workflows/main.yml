@@ -35,7 +35,7 @@ jobs:
         GCLOUD_SERVICE_KEY: ${{ secrets.GCLOUD_SERVICE_KEY }} 
   deploy:
     # The type of runner that the job will run on
-    runs-on: jnewland/git-and-stuff
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
