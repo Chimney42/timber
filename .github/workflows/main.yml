@@ -13,7 +13,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 env:
-  tag: gh-action
+  TAG: gh-action
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -30,7 +30,7 @@ jobs:
       with:
         gcr_host: eu.gcr.io
         image_name: timber-backend
-        image_tag: $tag
+        image_tag: ${{ env.TAG }}
       env:  
         GOOGLE_PROJECT_ID: container-solutions-workshops
         GCLOUD_SERVICE_KEY: ${{ secrets.GCLOUD_SERVICE_KEY }} 
@@ -47,5 +47,5 @@ jobs:
       run: |
         git clone https://$GITHUB_USER:$GITHUB_TOKEN@github.com/ContainerSolutions/gitops-training-opsrepo.git
         ls -lisah
-        echo $tag
+        echo $TAG
 
